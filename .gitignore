@@ -1,0 +1,79 @@
+# dependencies
+**/node_modules
+**/.pnp
+**/.pnp.js
+
+# testing
+**/coverage
+
+# production
+**/build
+**/lib
+
+# misc
+**/.DS_Store
+**/.env.local
+**/.env.development.local
+**/.env.test.local
+**/.env.production.local
+
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+
+# Android/IntelliJ
+#
+reactnative/build/
+reactnative/.idea
+reactnative/.gradle
+reactnative/local.properties
+reactnative/*.iml
+
+# node.js
+#
+reactnative/node_modules/
+reactnative/npm-debug.log
+reactnative/yarn-error.log
+
+# BUCK
+reactnative/buck-out/
+reactnative/\.buckd/
+reactnative/*.keystore
+reactnative/!debug.keystore
+
+# fastlane
+#
+# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
+# screenshots whenever they are needed.
+# For more information about the recommended setup visit:
+# https://docs.fastlane.tools/best-practices/source-control/
+
+reactnative/*/fastlane/report.xml
+reactnative/*/fastlane/Preview.html
+reactnative/*/fastlane/screenshots
+
+# Bundle artifact
+reactnative/*.jsbundle
+
+# CocoaPods
+reactnative/ios/Pods/
+
+web/.pnp
+web/*.pnp.js
+
+# testing
+web/coverage
+
+# production
+web/build
+
+# misc
+web/.DS_Store
+web/.env.local
+web/.env.development.local
+web/.env.test.local
+web/.env.production.local
+
+web/npm-debug.log*
+web/yarn-debug.log*
+web/yarn-error.log*
