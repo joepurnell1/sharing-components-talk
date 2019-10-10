@@ -6,10 +6,13 @@
   "scripts": {
     "prebuild": "rm -rf ./lib",
     "build": "babel ./src -d ./lib",
-    "postbuild": "cp package.json ./lib",
+    "postbuild": "cp package.json ./lib ; cp -r ./src/assets ./lib",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "files": ["lib/**/*", "package.json"],
+  "files": [
+    "lib/**/*",
+    "package.json"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -27,5 +30,8 @@
     "react-dom": "^16.6.3",
     "react-native": "0.61.1",
     "styled-components": "^4.4.0"
+  },
+  "dependencies": {
+    "stylish": "/Users/joepurnell/Development/pres/comp-lib/stylish/lib"
   }
 }

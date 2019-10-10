@@ -1,66 +1,64 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React from 'react';
-import {SafeAreaView, StyleSheet, StatusBar} from 'react-native';
+import styled from 'styled-components/native';
+import { StatusBar} from 'react-native';
+import {MusicPlayer} from 'stylish/organisms/musicPlayer';
+import {AlbumList} from 'stylish/organisms/albumList';
 
-import {Colors} from 'react-native/Libraries/NewAppScreen';
+const View = styled.SafeAreaView`
+  background-color: #f9f9f9;
+  flex: 1;
+`;
 
-import Bigboy from 'stylish/bigboy';
+const StyledScrollView = styled.ScrollView`
+  padding-top: 16px;
+`;
+
+const songList = [
+  'The Chase (feat. Kadhja Bonet)',
+  'Headlow (feat. Norelle)',
+  'Tints (feat. Kendrick Lamar)',
+  'Who R U?',
+  'Six Summers',
+  'Saviers Road',
+  'Smile/Petty',
+  'Mansa Musa (feat. Dr. Dre and Cocoa Sarai)',
+  'Brother’s Keeper (feat. Pusha T)',
+  'Anywhere (feat. Snoop Dogg, The Last Artful, Dodgr)',
+  'Trippy (feat. J. Cole)',
+  'Cheers (feat. Q Tip)',
+  'Sweet Chick (feat. BJ The Chicago Kid – Bonus Track)',
+  'Left to Right',
+];
 
 const App: () => React$Node = () => {
+
+  const [currentSongTitle, setCurrentSongTitle] = React.useState("Cheers (feat. Q Tip)");
+  const [currentArtist, setCurrentArtist] = React.useState("Anderson .Paak");
+
+  const handleSongPress = (songTitle) => {
+    const songInfo = songTitle.split(' - ');
+    setCurrentSongTitle(songInfo[0])
+    setCurrentArtist(songInfo[1]);
+  }
+
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <Bigboy />
-      </SafeAreaView>
-    </>
+    <View>
+    <StatusBar barStyle="dark-content" />
+      <MusicPlayer
+        albumArt={require('./assets/oxnard.jpg')}
+        songTitle={currentSongTitle}
+        artist={currentArtist}
+      />
+      <StyledScrollView>
+        <AlbumList
+          albumArt={require('./assets/oxnard.jpg')}
+          songList={songList}
+          artist="Anderson .Paak"
+          onSongPress={handleSongPress}
+        />
+      </StyledScrollView>
+    </View>
   );
 };
-
-const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: Colors.lighter,
-  },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
-  body: {
-    backgroundColor: Colors.white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
-});
 
 export default App;
