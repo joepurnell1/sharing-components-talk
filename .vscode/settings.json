@@ -1,0 +1,8 @@
+{
+  "files.exclude": {
+      // "**/*.native.js": true,
+      // "**/*.ios.js": true,
+      // "**/*.android.js": true,
+      // "reactnative/": true
+  }
+}
