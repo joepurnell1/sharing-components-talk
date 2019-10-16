@@ -18,6 +18,8 @@ import {
   Layout,
 } from 'spectacle';
 import createTheme from 'spectacle/lib/themes/default';
+import CodeSlide from 'spectacle-code-slide';
+import './codeStyle.css';
 
 require('normalize.css');
 
@@ -45,7 +47,7 @@ export default class Presentation extends React.Component {
   render() {
     return (
       <Deck
-        transition={['zoom', 'slide']}
+        transition={[]}
         transitionDuration={500}
         theme={theme}
         progress="none"
@@ -83,11 +85,11 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
 
-        <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={3} textColor="tertiary" caps>
+        <Slide transition={['zoom']} bgColor="tertiary">
+          <Heading size={3} textColor="secondary" caps>
             Atomic Design
           </Heading>
-          <Heading size={6} textColor="secondary" caps>
+          <Heading size={6} textColor="primary" caps>
             Brad Frost
           </Heading>
         </Slide>
@@ -99,14 +101,14 @@ export default class Presentation extends React.Component {
           <Image src={images.atomicDesign.replace('/', '')} margin="0px auto 40px" />
         </Slide>
 
-        <Slide transition={['fade']} bgColor="primary" align="center center">
-          <Heading size={3} textColor="tertiary" caps lineHeight={1}>
+        <Slide transition={['fade']} bgColor="quaternary" align="center center">
+          <Heading size={3} textColor="primary" caps lineHeight={1}>
             Atoms
           </Heading>
           <Image src={images.atom.replace('/', '')} margin="40px auto 0" height="200px" />
         </Slide>
 
-        <Slide transition={['fade']} bgColor="primary" align="center center">
+        <Slide transition={['fade']} bgColor="secondary" align="center center">
           <Heading size={3} textColor="tertiary" caps lineHeight={1}>
             Molecules
           </Heading>
@@ -120,21 +122,31 @@ export default class Presentation extends React.Component {
           <Image src={images.organism.replace('/', '')} margin="40px auto 0" height="200px" />
         </Slide>
 
-        <Slide transition={['fade']} bgColor="primary" align="center center">
+        <Slide transition={['fade']} bgColor="tertiary" align="center center">
           <Layout>
             <Fill>
-              <Heading size={3} textColor="tertiary" caps lineHeight={1}>
+              <Heading size={3} textColor="primary" caps lineHeight={1}>
                 Templates
               </Heading>
             </Fill>
             <Fill>
-              <Heading size={3} textColor="tertiary" caps lineHeight={1}>
+              <Heading size={3} textColor="primary" caps lineHeight={1}>
                 Pages
               </Heading>
             </Fill>
           </Layout>
         </Slide>
 
+        <CodeSlide
+            transition={[]}
+            bgColor="tertiary"
+            lang="js"
+            code={require("./assets/code/atom.example").default} // eslint-disable-line
+            ranges={[
+              { loc: [5, 8], title: 'Second' },
+              { loc: [0, 1], title: 'The Beginning' },
+            ]}
+          />
 
       </Deck>
     );

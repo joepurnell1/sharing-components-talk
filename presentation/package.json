@@ -5,6 +5,7 @@
   "dependencies": {
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
+    "spectacle-code-slide": "^0.5.2",
     "spectacle-scripts": "2.4.0",
     "styled-components": "^4.4.0",
     "stylish": "/Users/joepurnell/Development/pres/comp-lib/stylish/lib"
@@ -25,7 +26,8 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "babel-plugin-styled-components": "^1.10.6"
+    "babel-plugin-styled-components": "^1.10.6",
+    "raw-loader": "^3.1.0"
   },
   "babel": {
     "plugins": [
