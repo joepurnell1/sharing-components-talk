@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
-import { Vert } from '../../atoms/layout';
+import { Vert } from '../../bonds';
 import { Title } from '../../atoms/typography';
 import { SongListing } from '../../molecules/songlisting';
 

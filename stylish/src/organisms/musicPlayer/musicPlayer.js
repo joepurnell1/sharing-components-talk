@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { CentVert } from '../../atoms/layout';
+import { CentVert } from '../../bonds';
 import { Image } from '../../atoms/image';
 import { Title } from '../../atoms/typography';
 import { MediaControls } from '../../molecules/mediacontrols';

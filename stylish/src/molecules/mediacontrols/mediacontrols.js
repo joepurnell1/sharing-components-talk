@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { CentHori } from '../../atoms/layout';
+import { CentHori } from '../../bonds';
 import { Play, Pause, Stop, FastForward, Rewind } from '../../atoms/mediabutton';
 
 const Container = styled(CentHori)`

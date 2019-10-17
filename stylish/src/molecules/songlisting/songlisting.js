@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Hori } from "../../atoms/layout";
+import { Hori } from "../../bonds";
 import { ClearButton } from "../../atoms/button";
 import { Image } from "../../atoms/image";
 import { Title } from "../../atoms/typography";
