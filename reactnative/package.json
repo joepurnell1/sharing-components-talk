@@ -13,7 +13,7 @@
     "react": "16.9.0",
     "react-native": "0.61.1",
     "styled-components": "^4.4.0",
-    "stylish": "/Users/joepurnell/Development/pres/comp-lib/stylish/lib"
+    "stylish": "../stylish/lib"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",

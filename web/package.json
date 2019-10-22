@@ -7,7 +7,7 @@
     "react-dom": "^16.10.1",
     "react-scripts": "3.1.2",
     "styled-components": "^4.4.0",
-    "stylish": "/Users/joepurnell/Development/pres/comp-lib/stylish/lib"
+    "stylish": "../stylish/lib"
   },
   "scripts": {
     "start": "react-scripts start",

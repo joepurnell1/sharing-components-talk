@@ -30,8 +30,5 @@
     "react-dom": "^16.6.3",
     "react-native": "0.61.1",
     "styled-components": "^4.4.0"
-  },
-  "dependencies": {
-    "stylish": "/Users/joepurnell/Development/pres/comp-lib/stylish/lib"
   }
 }

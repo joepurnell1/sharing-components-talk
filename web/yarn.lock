@@ -9241,10 +9241,7 @@ stylis@^3.5.0:
   resolved "https://registry.yarnpkg.com/stylis/-/stylis-3.5.4.tgz#f665f25f5e299cf3d64654ab949a57c768b73fbe"
   integrity sha512-8/3pSmthWM7lsPBKv7NXkzn2Uc9W7NotcwGNpJaa3k7WMM1XDCA4MgT5k/8BIexd5ydZdboXtU90XH9Ec4Bv/Q==
 
-stylish@/Users/joepurnell/Development/pres/comp-lib/stylish/lib:
-  version "1.0.0"
-
-"stylish@file:../stylish/lib":
+stylish@../stylish/lib:
   version "1.0.0"
 
 supports-color@^2.0.0:

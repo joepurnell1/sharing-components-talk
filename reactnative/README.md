@@ -2,13 +2,16 @@ Talk on sharing components between React & React Native using Styled-Components 
 
 # Web Example
 
-Built using [Create-React-App](https://github.com/facebook/create-react-app).
+Built using [React Native CLI](https://facebook.github.io/react-native/docs/getting-started).
 
 ## Prereq
 ```yarn```
+``` cd ios ; pod install ; rm -rf build ; cd .. ; yarn run ios ```
 
 ## Run
 ```yarn start```
+(Separate Terminal)
+```yarn run ios```
 
 ## Reinstall Stylish
 ```rm -rf node_modules/stylish ; yarn add ../stylish/lib```
