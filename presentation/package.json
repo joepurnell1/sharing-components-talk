@@ -5,10 +5,8 @@
   "dependencies": {
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
-    "spectacle-code-slide": "^0.5.2",
     "spectacle-scripts": "2.4.0",
-    "styled-components": "^4.4.0",
-    "stylish": "/Users/joepurnell/Development/pres/comp-lib/stylish/lib"
+    "styled-components": "^4.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
