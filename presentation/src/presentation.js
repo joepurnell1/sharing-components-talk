@@ -573,7 +573,7 @@ export default class Presentation extends React.Component {
 
         <Slide transition={["zoom"]} bgColor="quaternary">
           <Text size={2} textColor="primary">
-            https://github.com/joepurnell1/comp-lib-talk
+            https://github.com/joepurnell1/sharing-components-talk
           </Text>
           <Notes>find repo</Notes>
         </Slide>
