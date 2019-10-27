@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components/native';
-import { StatusBar} from 'react-native';
-import {MusicPlayer} from 'stylish/organisms/musicPlayer';
-import {AlbumList} from 'stylish/organisms/albumList';
+import { StatusBar } from 'react-native';
+import { MusicPlayer } from 'stylish/organisms/musicPlayer';
+import { AlbumList } from 'stylish/organisms/albumList';
 
 const View = styled.SafeAreaView`
   background-color: #f9f9f9;

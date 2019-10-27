@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { CentHori } from '../../bonds';
-import { Play, Pause, Stop, FastForward, Rewind } from '../../atoms/mediabutton';
+import { Play, Pause, FastForward, Rewind } from '../../atoms/mediabutton';
 
 const Container = styled(CentHori)`
   width: 45%;

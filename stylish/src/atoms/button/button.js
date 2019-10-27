@@ -9,6 +9,6 @@ const ClearButtonElement = styled.button`
   padding: 0;
 `;
 
-export const ClearButton = ({ onPress, children, margin, width }) => (
-  <ClearButtonElement onClick={onPress} margin={margin} width={width}>{children}</ClearButtonElement>
+export const ClearButton = ({ onPress, children, margin, width, ...props }) => (
+  <ClearButtonElement onClick={onPress} margin={margin} width={width} {...props}>{children}</ClearButtonElement>
 );

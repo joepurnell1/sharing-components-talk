@@ -101,7 +101,7 @@ export default class Presentation extends React.Component {
             Brad Frost
           </Heading>
           <Text size={6} textColor="primary" margin="30px auto 0">
-            https://bradfrost.com/blog/post/atomic-web-design/#templates
+            https://bradfrost.com/blog/post/atomic-web-design/
           </Text>
           <Notes>
             <p>start with atomic design</p>
@@ -173,7 +173,7 @@ export default class Presentation extends React.Component {
           <Image
             src={images.organism.replace("/", "")}
             margin="40px auto 0"
-            height="200px"
+            height="600px"
           />
           <Notes>
             <ul>
@@ -311,7 +311,7 @@ export default class Presentation extends React.Component {
           <Image
             src={images.shrug.replace("/", "")}
             margin="40px auto 0"
-            height="200px"
+            height="400px"
           />
           <Notes>
             <ul>
@@ -322,7 +322,7 @@ export default class Presentation extends React.Component {
 
         <Slide transition={["fade"]} bgColor="quaternary" align="center center">
           <Heading size={6} textColor="primary" caps fit>
-            covalent bonds
+            molecular bonds
           </Heading>
           <Heading size={6} textColor="secondary" caps fit>
             holding molecules together
@@ -351,6 +351,21 @@ export default class Presentation extends React.Component {
             height="300px"
             width="auto"
           />
+          <Notes>
+            <ul>
+              <li>bonds can then be used to hold structure across levels</li>
+              <li>but why abstract the structure?</li>
+            </ul>
+          </Notes>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary">
+          <Heading size={3} fit caps lineHeight={1} textColor="secondary">
+            How does this relate to
+          </Heading>
+          <Heading size={3} fit caps lineHeight={1} textColor="secondary">
+            sharing UI components?
+          </Heading>
         </Slide>
 
         <Slide transition={["fade"]} bgColor="secondary" align="center center">
@@ -382,6 +397,7 @@ export default class Presentation extends React.Component {
           <Notes>
             <ul>
               <li>no fancy configuration</li>
+              <li>helps us choose file types</li>
             </ul>
           </Notes>
         </Slide>
@@ -390,6 +406,30 @@ export default class Presentation extends React.Component {
           <Heading size={6} textColor="primary" fit>
             index.js
           </Heading>
+          <Notes>
+            <ul>
+              <li>choose index.js in normal circumstances</li>
+              <li>what about react native</li>
+            </ul>
+          </Notes>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="primary" align="center center">
+          <Heading size={6} textColor="secondary" caps fit>
+            Metro Bundler
+          </Heading>
+          <Heading size={6} textColor="quaternary" caps fit>
+            <S type="strikethrough">fancy metro bundler</S>
+          </Heading>
+          <Heading size={6} textColor="tertiary" caps fit>
+            normal normal metro bundler
+          </Heading>
+          <Notes>
+            <ul>
+              <li>no fancy configuration</li>
+              <li>helps us choose file types for mobile</li>
+            </ul>
+          </Notes>
         </Slide>
 
         <Slide transition={["fade"]} bgColor="quaternary" align="center center">
@@ -450,7 +490,7 @@ export default class Presentation extends React.Component {
 
         <Slide transition={["zoom"]} bgColor="primary">
           <Heading size={2} textColor="quaternary">
-            index.js
+            Vertical Container
           </Heading>
           <CodePane
             lang="jsx"
@@ -462,7 +502,7 @@ export default class Presentation extends React.Component {
 
         <Slide transition={["zoom"]} bgColor="quaternary">
           <Heading size={2} textColor="primary">
-            index.native.js
+            Vertical Container Native
           </Heading>
           <CodePane
             lang="jsx"
@@ -474,7 +514,7 @@ export default class Presentation extends React.Component {
 
         <Slide transition={["zoom"]} bgColor="secondary">
           <Heading size={2} textColor="primary">
-            index.js
+            fancy-component.js
           </Heading>
           <CodePane
             lang="jsx"
@@ -484,19 +524,20 @@ export default class Presentation extends React.Component {
           />
            <Notes>
             <ul>
-              <li>importing from atoms</li>
-              <li>extending the styles</li>
+              <li>importing from atoms regardless of platform</li>
+              <li>extending the styles regardless of platform</li>
+              <li>this cane be used for any platform now</li>
             </ul>
           </Notes>
         </Slide>
 
         <Slide transition={["zoom"]} bgColor="quaternary">
           <Heading size={2} textColor="primary">
-            Webpack checks for our platform and loads the appropriate file extension at each level
+            Our platforms load the appropriate file extension at each level
           </Heading>
           <Notes>
             <ul>
-              <li>each layer webpack searches and uses the right file</li>
+              <li>each layer webpack or metro bundler searches and uses the right file</li>
               <li>mobile order of importance</li>
             </ul>
           </Notes>
@@ -542,16 +583,19 @@ export default class Presentation extends React.Component {
 
         <Slide transition={["zoom"]} bgColor="quaternary">
           <Heading size={2} textColor="primary" fit caps margin="0 0 20px">
-            Styled Components = Share more of your styling across platforms
+            Styled Components = Share styling across platforms
           </Heading>
           <Heading size={2} textColor="primary" fit caps margin="0 0 20px">
-            Web Pack = Black magic (super handy getting file types though)
+            Web Pack = Black magic
           </Heading>
           <Heading size={2} textColor="primary" fit caps margin="0 0 20px">
-            Atomic Design = Great at breaking down components into reusable chunks
+            Metro bunder = Webpack for native
           </Heading>
           <Heading size={2} textColor="primary" fit caps margin="0 0 20px">
-            Share code = By defining all levels of your component separately
+            Atomic Design = Break down components
+          </Heading>
+          <Heading size={2} textColor="primary" fit caps margin="0 0 20px">
+            Share code = Abstract atoms to reuse molecules/organisms
           </Heading>
           <Heading size={2} textColor="primary" fit caps>
             Modules = Easy peasy sharing across projects
