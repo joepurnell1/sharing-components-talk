@@ -37,6 +37,7 @@ const images = {
   shrug: require('./assets/shrug.gif'),
   webpack: require('./assets/webpack.jpg'),
   alright: require('./assets/alright.gif'),
+  and: require('./assets/and.gif'),
 };
 
 export default class Presentation extends React.Component {
@@ -359,12 +360,30 @@ export default class Presentation extends React.Component {
           </Notes>
         </Slide>
 
+        <Slide transition={["fade"]} bgColor="tertiary">
+          <Heading size={3} fit caps lineHeight={1} textColor="primary">
+            Why abstract such
+          </Heading>
+          <Heading size={3} fit caps lineHeight={1} textColor="primary">
+           low level components?
+          </Heading>
+        </Slide>
+
         <Slide transition={["fade"]} bgColor="primary">
           <Heading size={3} fit caps lineHeight={1} textColor="secondary">
             How does this relate to
           </Heading>
           <Heading size={3} fit caps lineHeight={1} textColor="secondary">
             sharing UI components?
+          </Heading>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="quaternary">
+          <Heading size={3} fit caps lineHeight={1} textColor="primary">
+            What composes our
+          </Heading>
+          <Heading size={3} fit caps lineHeight={1} textColor="primary">
+            structure during build?
           </Heading>
         </Slide>
 
@@ -414,6 +433,12 @@ export default class Presentation extends React.Component {
           </Notes>
         </Slide>
 
+        <Slide transition={["fade"]} bgColor="secondary">
+          <Heading size={3} fit lineHeight={1} textColor="primary">
+            *insert metro bundler meme here*
+          </Heading>
+        </Slide>
+
         <Slide transition={["fade"]} bgColor="primary" align="center center">
           <Heading size={6} textColor="secondary" caps fit>
             Metro Bundler
@@ -432,6 +457,21 @@ export default class Presentation extends React.Component {
           </Notes>
         </Slide>
 
+        <Slide transition={["zoom"]} bgColor="quaternary" align="center center">
+          <Heading size={6} textColor="primary" fit>
+            index.ios.js
+          </Heading>
+          <Heading size={6} textColor="primary" fit margin="100px 0 -50px 0">
+            index.android.js
+          </Heading>
+          <Notes>
+            <ul>
+              <li>filetype from React Native</li>
+              <li>focused to one platform</li>
+            </ul>
+          </Notes>
+        </Slide>
+
         <Slide transition={["fade"]} bgColor="quaternary" align="center center">
           <Heading size={6} textColor="primary" fit>
             index.native.js
@@ -446,16 +486,21 @@ export default class Presentation extends React.Component {
 
         <Slide transition={["fade"]} bgColor="quaternary" align="center center">
           <Heading size={6} textColor="primary" fit>
-            index.ios.js
-          </Heading>
-          <Heading size={6} textColor="primary" fit margin="100px 0 -50px 0">
-            index.android.js
+            index.js
           </Heading>
           <Notes>
             <ul>
-              <li>focused to one platform</li>
+              <li>choose index.js when others don't exist</li>
             </ul>
           </Notes>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary" align="center center">
+          <Image
+            src={images.and.replace("/", "")}
+            margin="40px auto 0"
+            height="500px"
+          />
         </Slide>
 
         <Slide transition={['zoom']} bgColor="secondary">
@@ -494,7 +539,7 @@ export default class Presentation extends React.Component {
           </Heading>
           <CodePane
             lang="jsx"
-            source={`export const VerticalConatiner = styled.div\`\n\tdisplay: flex;\n\tflex-direction: column;\n\`;\n`}
+            source={`import styled from 'styled-components';\n\nexport const VerticalConatiner = styled.div\`\n\tdisplay: flex;\n\tflex-direction: column;\n\`;\n`}
             margin="20px 0"
             textSize="24px"
           />
