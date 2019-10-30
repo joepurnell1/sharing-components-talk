@@ -1,5 +1,6 @@
-import React from 'react';
+import React from "react";
 import {
+  Appear,
   CodePane,
   Deck,
   Fill,
@@ -9,35 +10,36 @@ import {
   S,
   Slide,
   Text,
-  Layout,
-} from 'spectacle';
-import createTheme from 'spectacle/lib/themes/default';
-import './codeStyle.css';
+  Layout
+} from "spectacle";
+import createTheme from "spectacle/lib/themes/default";
+import "./codeStyle.css";
 
-require('normalize.css');
+require("normalize.css");
 
 const theme = createTheme(
   {
-    primary: '#02182B',
-    secondary: '#E84855',
-    tertiary: '#FFF',
-    quaternary: '#16F4D0',
+    primary: "#02182B",
+    secondary: "#E84855",
+    tertiary: "#FFF",
+    quaternary: "#16F4D0"
   },
   {
-    primary: 'Montserrat',
-    secondary: 'Helvetica',
+    primary: "Montserrat",
+    secondary: "Helvetica"
   }
 );
 
 const images = {
-  atomicDesign: require('./assets/atomic-design.png'),
-  atom: require('./assets/PlayButton.png'),
-  molecule: require('./assets/MusicControls.png'),
-  organism: require('./assets/MusicPlayer.png'),
-  shrug: require('./assets/shrug.gif'),
-  webpack: require('./assets/webpack.jpg'),
-  alright: require('./assets/alright.gif'),
-  and: require('./assets/and.gif'),
+  atomicDesign: require("./assets/atomic-design.png"),
+  atom: require("./assets/PlayButton.png"),
+  molecule: require("./assets/MusicControls.png"),
+  organism: require("./assets/MusicPlayer.png"),
+  shrug: require("./assets/shrug.gif"),
+  webpack: require("./assets/webpack.jpg"),
+  metro: require("./assets/metro.jpg"),
+  alright: require("./assets/alright.gif"),
+  and: require("./assets/and.gif")
 };
 
 export default class Presentation extends React.Component {
@@ -84,13 +86,16 @@ export default class Presentation extends React.Component {
 
         <Slide transition={["fade"]} bgColor="secondary">
           <Heading size={3} fit caps lineHeight={1} textColor="primary">
-            Share UI code
+            Sharing UI code
           </Heading>
           <Heading size={3} fit caps lineHeight={1} textColor="primary">
             across platforms
           </Heading>
           <Notes>
-            <p>how we can use it to share ui code between web and mobile platforms</p>
+            <p>
+              how we can use it to share ui code between web and mobile
+              platforms
+            </p>
           </Notes>
         </Slide>
 
@@ -134,11 +139,13 @@ export default class Presentation extends React.Component {
           <Heading size={3} textColor="primary" caps lineHeight={1}>
             Atoms
           </Heading>
-          <Image
-            src={images.atom.replace("/", "")}
-            margin="40px auto 0"
-            height="200px"
-          />
+          <Appear>
+            <Image
+              src={images.atom.replace("/", "")}
+              margin="40px auto 0"
+              height="200px"
+            />
+          </Appear>
           <Notes>
             <ul>
               <li>low level element</li>
@@ -153,11 +160,13 @@ export default class Presentation extends React.Component {
           <Heading size={3} textColor="tertiary" caps lineHeight={1}>
             Molecules
           </Heading>
-          <Image
-            src={images.molecule.replace("/", "")}
-            margin="40px auto 0"
-            height="200px"
-          />
+          <Appear>
+            <Image
+              src={images.molecule.replace("/", "")}
+              margin="40px auto 0"
+              height="200px"
+            />
+          </Appear>
           <Notes>
             <ul>
               <li>multiple atoms</li>
@@ -171,11 +180,13 @@ export default class Presentation extends React.Component {
           <Heading size={3} textColor="tertiary" caps lineHeight={1}>
             Organisms
           </Heading>
-          <Image
-            src={images.organism.replace("/", "")}
-            margin="40px auto 0"
-            height="600px"
-          />
+          <Appear>
+            <Image
+              src={images.organism.replace("/", "")}
+              margin="40px auto 0"
+              height="600px"
+            />
+          </Appear>
           <Notes>
             <ul>
               <li>multiple molecules</li>
@@ -188,14 +199,18 @@ export default class Presentation extends React.Component {
         <Slide transition={["fade"]} bgColor="tertiary" align="center center">
           <Layout>
             <Fill>
-              <Heading size={3} textColor="primary" caps lineHeight={1}>
-                Templates
-              </Heading>
+              <Appear>
+                <Heading size={3} textColor="primary" caps lineHeight={1}>
+                  Templates
+                </Heading>
+              </Appear>
             </Fill>
             <Fill>
-              <Heading size={3} textColor="primary" caps lineHeight={1}>
-                Pages
-              </Heading>
+              <Appear>
+                <Heading size={3} textColor="primary" caps lineHeight={1}>
+                  Pages
+                </Heading>
+              </Appear>
             </Fill>
           </Layout>
           <Notes>
@@ -206,6 +221,42 @@ export default class Presentation extends React.Component {
               <li>not digging much deeper</li>
             </ul>
           </Notes>
+        </Slide>
+
+        <Slide transition={["zoom"]} bgColor="primary" align="center center">
+          <Heading size={3} textColor="tertiary" caps fit lineHeight={1}>
+            What does this solve?
+          </Heading>
+          <Appear>
+            <Text textColor="quaternary">
+              Defined and shared lower components means less time rewriting the
+              same components
+            </Text>
+          </Appear>
+          <Appear>
+            <Text textColor="secondary">Shared interfaces for components</Text>
+          </Appear>
+          <Appear>
+            <Text textColor="quaternary">
+              Shared styling keeps us consistent
+            </Text>
+          </Appear>
+          <Appear>
+            <Text textColor="secondary">
+              Coupled with theming opens up to sharing across brands
+            </Text>
+          </Appear>
+          <Appear>
+            <Text textColor="quaternary">
+              Also opens up theme changes for events
+            </Text>
+          </Appear>
+          <Appear>
+            <Text textColor="secondary">
+              Better mobile web experience as we're writing for app too (coming
+              up)
+            </Text>
+          </Appear>
         </Slide>
 
         <Slide transition={["fade"]} bgColor="secondary">
@@ -222,17 +273,30 @@ export default class Presentation extends React.Component {
 
         <Slide transition={["zoom"]} bgColor="primary">
           <Layout>
+            <Appear>
               <Fill>
-                <Heading size={1}>
-                  💅
-                </Heading>
+                <Heading size={1}>⚛︎</Heading>
               </Fill>
+            </Appear>
+            <Appear>
               <Fill>
-                <Heading size={1}>
-                  ⚛︎
-                </Heading>
+                <Heading size={1}>💅</Heading>
               </Fill>
-            </Layout>
+            </Appear>
+          </Layout>
+          <Appear>
+            <div>
+              <Heading size={1} fit caps textColor="quaternary">
+                Yes, there are
+              </Heading>
+              <Heading size={1} fit caps textColor="quaternary">
+                other libraries
+              </Heading>
+              <Heading size={1} fit caps textColor="secondary">
+                (and I do like it lot)
+              </Heading>
+            </div>
+          </Appear>
           <Notes>
             <ul>
               <li>assuming two things</li>
@@ -242,29 +306,9 @@ export default class Presentation extends React.Component {
           </Notes>
         </Slide>
 
-        <Slide transition={['fade']} bgColor="primary">
-          <Heading size={1}>
-            💅
-          </Heading>
-          <Heading size={1} fit caps textColor="quaternary">
-            Yes, there are
-          </Heading>
-          <Heading size={1} fit caps textColor="quaternary">
-            other libraries
-          </Heading>
+        <Slide transition={["zoom"]} bgColor="primary">
           <Heading size={1} fit caps textColor="secondary">
-            (but I like it lot)
-          </Heading>
-          <Notes>
-            <ul>
-              <li>there is a reasons for styled-components</li>
-            </ul>
-          </Notes>
-        </Slide>
-
-        <Slide transition={['zoom']} bgColor="primary">
-          <Heading size={1} fit caps textColor="secondary">
-            Also, there is a need for styled-components
+            But, there is also a need for styled-components
           </Heading>
           <Notes>
             <ul>
@@ -300,7 +344,10 @@ export default class Presentation extends React.Component {
                 <ul>
                   <li>Blur image: filter: blur(20px);</li>
                   <li>yarn build stylish</li>
-                  <li>rm -rf node_modules/stylish ; yarn add /Users/joepurnell/Development/pres/comp-lib/stylish/lib</li>
+                  <li>
+                    rm -rf node_modules/stylish ; yarn add
+                    /Users/joepurnell/Development/pres/comp-lib/stylish/lib
+                  </li>
                   <li>yarn start</li>
                 </ul>
               </li>
@@ -361,21 +408,27 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={["fade"]} bgColor="tertiary">
+          <Appear>
+            <div>
+
           <Heading size={3} fit caps lineHeight={1} textColor="primary">
             Why abstract such
           </Heading>
           <Heading size={3} fit caps lineHeight={1} textColor="primary">
-           low level components?
+            low level components?
           </Heading>
-        </Slide>
-
-        <Slide transition={["fade"]} bgColor="primary">
-          <Heading size={3} fit caps lineHeight={1} textColor="secondary">
+            </div>
+          </Appear>
+          <Appear>
+            <div>
+            <Heading size={3} fit caps lineHeight={1} textColor="secondary">
             How does this relate to
           </Heading>
           <Heading size={3} fit caps lineHeight={1} textColor="secondary">
             sharing UI components?
           </Heading>
+            </div>
+          </Appear>
         </Slide>
 
         <Slide transition={["fade"]} bgColor="quaternary">
@@ -433,10 +486,23 @@ export default class Presentation extends React.Component {
           </Notes>
         </Slide>
 
-        <Slide transition={["fade"]} bgColor="secondary">
-          <Heading size={3} fit lineHeight={1} textColor="primary">
-            *insert metro bundler meme here*
+        <Slide transition={["zoom"]} bgColor="primary" align="center center">
+          <Heading size={6} textColor="quaternary" caps fit>
+            what about react native?
           </Heading>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary" align="center center">
+          <Image
+            src={images.metro.replace("/", "")}
+            margin="40px auto 0"
+            height="500px"
+          />
+          <Notes>
+            <ul>
+              <li>black magic</li>
+            </ul>
+          </Notes>
         </Slide>
 
         <Slide transition={["fade"]} bgColor="primary" align="center center">
@@ -503,7 +569,7 @@ export default class Presentation extends React.Component {
           />
         </Slide>
 
-        <Slide transition={['zoom']} bgColor="secondary">
+        <Slide transition={["zoom"]} bgColor="secondary">
           <Heading size={1} fit caps textColor="primary">
             back to styled-components
           </Heading>
@@ -567,7 +633,7 @@ export default class Presentation extends React.Component {
             margin="20px 0"
             textSize="24px"
           />
-           <Notes>
+          <Notes>
             <ul>
               <li>importing from atoms regardless of platform</li>
               <li>extending the styles regardless of platform</li>
@@ -582,29 +648,32 @@ export default class Presentation extends React.Component {
           </Heading>
           <Notes>
             <ul>
-              <li>each layer webpack or metro bundler searches and uses the right file</li>
+              <li>
+                each layer webpack or metro bundler searches and uses the right
+                file
+              </li>
               <li>mobile order of importance</li>
             </ul>
           </Notes>
         </Slide>
 
-        <Slide transition={["zoom"]} bgColor="primary">
-          <Heading size={1} caps lineHeight={1} textColor="secondary">
+        <Slide transition={["zoom"]} bgColor="secondary">
+          <Heading size={1} caps lineHeight={1} textColor="primary">
             code!
           </Heading>
-          <Heading size={1} caps lineHeight={1} textColor="secondary">
+          <Heading size={1} caps lineHeight={1} textColor="primary">
             code!
           </Heading>
-          <Heading size={1} caps lineHeight={1} textColor="secondary">
+          <Heading size={1} caps lineHeight={1} textColor="primary">
             code!
           </Heading>
-          <Heading size={1} caps lineHeight={1} textColor="secondary">
+          <Heading size={1} caps lineHeight={1} textColor="primary">
             code!
           </Heading>
-          <Heading size={1} caps lineHeight={1} textColor="secondary">
+          <Heading size={1} caps lineHeight={1} textColor="primary">
             code!
           </Heading>
-          <Heading size={1} caps lineHeight={1} textColor="secondary">
+          <Heading size={1} caps lineHeight={1} textColor="primary">
             code!
           </Heading>
           <Notes>
@@ -617,7 +686,10 @@ export default class Presentation extends React.Component {
                 <p>redeploy</p>
                 <ul>
                   <li>yarn build stylish</li>
-                  <li>rm -rf node_modules/stylish ; yarn add /Users/joepurnell/Development/pres/comp-lib/stylish/lib</li>
+                  <li>
+                    rm -rf node_modules/stylish ; yarn add
+                    /Users/joepurnell/Development/pres/comp-lib/stylish/lib
+                  </li>
                   <li>yarn start</li>
                   <li>yarn run ios</li>
                 </ul>
@@ -626,25 +698,78 @@ export default class Presentation extends React.Component {
           </Notes>
         </Slide>
 
+        <Slide transition={["zoom"]} bgColor="primary">
+          <Heading size={1} caps lineHeight={1} textColor="tertiary">
+            What about workflow?
+          </Heading>
+          <Text textColor="quaternary">visual regression</Text>
+          <Text textColor="secondary">snapshot testing</Text>
+          <Text textColor="quaternary">storybook</Text>
+          <Text textColor="secondary">module versioning</Text>
+          <Text textColor="quaternary">e2e testing</Text>
+          <Text textColor="secondary">abstract when you need to abstract</Text>
+          <Text textColor="quaternary">never restrict yourself</Text>
+          <Text textColor="secondary">components, many many components</Text>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="secondary">
+          <Heading size={3} caps lineHeight={1} textColor="primary">
+            Works better if the same devs are doing both web and app
+          </Heading>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="tertiary">
+          <Heading size={3} caps lineHeight={1} textColor="primary">
+            Just cause you can share code
+          </Heading>
+          <Appear>
+            <Heading size={3} caps lineHeight={1} textColor="secondary">
+              you shouldn't share everything
+            </Heading>
+          </Appear>
+        </Slide>
+
         <Slide transition={["zoom"]} bgColor="quaternary">
-          <Heading size={2} textColor="primary" fit caps margin="0 0 20px">
-            Styled Components = Share styling across platforms
-          </Heading>
-          <Heading size={2} textColor="primary" fit caps margin="0 0 20px">
-            Web Pack = Black magic
-          </Heading>
-          <Heading size={2} textColor="primary" fit caps margin="0 0 20px">
-            Metro bunder = Webpack for native
-          </Heading>
-          <Heading size={2} textColor="primary" fit caps margin="0 0 20px">
-            Atomic Design = Break down components
-          </Heading>
-          <Heading size={2} textColor="primary" fit caps margin="0 0 20px">
-            Share code = Abstract atoms to reuse molecules/organisms
-          </Heading>
-          <Heading size={2} textColor="primary" fit caps>
-            Modules = Easy peasy sharing across projects
-          </Heading>
+          <Appear>
+            <Heading size={2} textColor="primary" fit caps margin="0 0 20px">
+              Styled Components = Share styling across platforms
+            </Heading>
+          </Appear>
+          <Appear>
+            <Heading size={2} textColor="primary" fit caps margin="0 0 20px">
+              Web Pack = Black magic
+            </Heading>
+          </Appear>
+          <Appear>
+            <Heading size={2} textColor="primary" fit caps margin="0 0 20px">
+              Metro bunder = Webpack for native
+            </Heading>
+          </Appear>
+          <Appear>
+            <Heading size={2} textColor="primary" fit caps margin="0 0 20px">
+              Atomic Design = Break down components
+            </Heading>
+          </Appear>
+          <Appear>
+            <Heading size={2} textColor="primary" fit caps margin="0 0 20px">
+              Share code = Abstract atoms to reuse molecules/organisms
+            </Heading>
+          </Appear>
+          <Appear>
+            <Heading size={2} textColor="primary" fit caps margin="0 0 20px">
+              Modules = Easy peasy sharing across projects
+            </Heading>
+          </Appear>
+          <Appear>
+            <Heading size={2} textColor="primary" fit caps margin="0 0 20px">
+              Keeping logic separate helps share components
+            </Heading>
+          </Appear>
+          <Appear>
+            <Heading size={2} textColor="primary" fit caps>
+              Utilise theming to share across platforms
+            </Heading>
+          </Appear>
           <Notes>look at the slide numb nuts</Notes>
         </Slide>
 
@@ -661,12 +786,11 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={["zoom"]} bgColor="quaternary">
-          <Text size={2} textColor="primary">
-            https://github.com/joepurnell1/sharing-components-talk
-          </Text>
+          <Heading size={6} caps fit textColor="primary">
+            github.com/joepurnell1/sharing-components-talk
+          </Heading>
           <Notes>find repo</Notes>
         </Slide>
-
       </Deck>
     );
   }
