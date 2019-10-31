@@ -39,7 +39,8 @@ const images = {
   webpack: require("./assets/webpack.jpg"),
   metro: require("./assets/metro.jpg"),
   alright: require("./assets/alright.gif"),
-  and: require("./assets/and.gif")
+  and: require("./assets/and.gif"),
+  somewhere: require("./assets/somewhere.gif"),
 };
 
 export default class Presentation extends React.Component {
@@ -408,25 +409,22 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={["fade"]} bgColor="tertiary">
+          <div>
+            <Heading size={3} fit caps lineHeight={1} textColor="primary">
+              Why abstract such
+            </Heading>
+            <Heading size={3} fit caps lineHeight={1} textColor="primary">
+              low level components?
+            </Heading>
+          </div>
           <Appear>
             <div>
-
-          <Heading size={3} fit caps lineHeight={1} textColor="primary">
-            Why abstract such
-          </Heading>
-          <Heading size={3} fit caps lineHeight={1} textColor="primary">
-            low level components?
-          </Heading>
-            </div>
-          </Appear>
-          <Appear>
-            <div>
-            <Heading size={3} fit caps lineHeight={1} textColor="secondary">
-            How does this relate to
-          </Heading>
-          <Heading size={3} fit caps lineHeight={1} textColor="secondary">
-            sharing UI components?
-          </Heading>
+              <Heading size={3} fit caps lineHeight={1} textColor="secondary">
+                How does this relate to
+              </Heading>
+              <Heading size={3} fit caps lineHeight={1} textColor="secondary">
+                sharing UI components?
+              </Heading>
             </div>
           </Appear>
         </Slide>
@@ -623,6 +621,27 @@ export default class Presentation extends React.Component {
           />
         </Slide>
 
+        <Slide transition={["fade"]} bgColor="quaternary">
+          <Heading size={6} textColor="primary">
+            index.js
+          </Heading>
+          <CodePane
+            lang="jsx"
+            source={`import styled from 'styled-components';\n\nexport const VerticalConatiner = styled.div\`\n\tdisplay: flex;\n\tflex-direction: column;\n\`;\n`}
+            margin="20px 0"
+            textSize="24px"
+          />
+          <Heading size={6} textColor="primary">
+            index.native.js
+          </Heading>
+          <CodePane
+            lang="jsx"
+            source={`import styled from 'styled-components/native';\n\nexport const VerticalConatiner = styled.View\`\n\tflex-direction: column;\n\`;\n`}
+            margin="20px 0"
+            textSize="24px"
+          />
+        </Slide>
+
         <Slide transition={["zoom"]} bgColor="secondary">
           <Heading size={2} textColor="primary">
             fancy-component.js
@@ -696,6 +715,14 @@ export default class Presentation extends React.Component {
               </li>
             </ol>
           </Notes>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="quaternary" align="center center">
+          <Image
+            src={images.somewhere.replace("/", "")}
+            margin="40px auto 0"
+            height="400px"
+          />
         </Slide>
 
         <Slide transition={["zoom"]} bgColor="primary">
