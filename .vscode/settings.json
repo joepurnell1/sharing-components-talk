@@ -4,6 +4,7 @@
     "**/bonds/": true,
     "**/*.ios.js": true,
     "**/*.android.js": true,
-    "reactnative/": true
+    "reactnative/": true,
+    "presentation/": true
   }
 }
