@@ -643,8 +643,8 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={["zoom"]} bgColor="secondary">
-          <Heading size={2} textColor="primary">
-            fancy-component.js
+          <Heading size={2} fit textColor="primary">
+            fancyComponent.js
           </Heading>
           <CodePane
             lang="jsx"
@@ -769,7 +769,7 @@ export default class Presentation extends React.Component {
           </Appear>
           <Appear>
             <Heading size={2} textColor="primary" fit caps margin="0 0 20px">
-              Metro bunder = Webpack for native
+              Metro bunder = Black Magic for RN
             </Heading>
           </Appear>
           <Appear>

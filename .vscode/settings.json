@@ -6,5 +6,20 @@
     "**/*.android.js": true,
     "reactnative/": true,
     "presentation/": true
-  }
+  },
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#f8f166",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#08b7af",
+    "activityBarBadge.foreground": "#15202b",
+    "titleBar.activeBackground": "#f6ec35",
+    "titleBar.inactiveBackground": "#f6ec3599",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveForeground": "#15202b99",
+    "statusBar.background": "#f6ec35",
+    "statusBarItem.hoverBackground": "#ede20b",
+    "statusBar.foreground": "#15202b"
+  },
+  "peacock.color": "#f6ec35"
 }
