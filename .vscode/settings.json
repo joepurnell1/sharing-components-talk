@@ -1,11 +1,11 @@
 {
   "files.exclude": {
-    "**/*.native.js": true,
-    "**/bonds/": true,
-    "**/*.ios.js": true,
-    "**/*.android.js": true,
-    "reactnative/": true,
-    "presentation/": true
+    // "**/*.native.js": true,
+    // "**/bonds/": true,
+    // "**/*.ios.js": true,
+    // "**/*.android.js": true,
+    // "reactnative/": true,
+    // "presentation/": true
   },
   "workbench.colorCustomizations": {
     "activityBar.background": "#f8f166",

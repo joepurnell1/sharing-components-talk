@@ -32,15 +32,23 @@ const theme = createTheme(
 
 const images = {
   atomicDesign: require("./assets/atomic-design.png"),
-  atom: require("./assets/PlayButton.png"),
-  molecule: require("./assets/MusicControls.png"),
-  organism: require("./assets/MusicPlayer.png"),
+  atom: require("./assets/image.png"),
+  atomDiagram: require("./assets/atom-diagram.png"),
+  molecule: require("./assets/songlisting.png"),
+  moleculeDiagram: require("./assets/molecule-diagram.png"),
+  moleculeDiagramLayout: require("./assets/molecule-diagram-layout.png"),
+  organism: require("./assets/albumlist.png"),
+  organismDiagram: require("./assets/organism-diagram.png"),
+  organismAndroidDiagram: require("./assets/organism-android-diagram.png"),
+  organismIosDiagram: require("./assets/organism-ios-diagram.png"),
+  organismIosLayoutDiagram: require("./assets/organism-ios-layout-diagram.png"),
   shrug: require("./assets/shrug.gif"),
   webpack: require("./assets/webpack.jpg"),
   metro: require("./assets/metro.jpg"),
   alright: require("./assets/alright.gif"),
   and: require("./assets/and.gif"),
   somewhere: require("./assets/somewhere.gif"),
+
 };
 
 export default class Presentation extends React.Component {
@@ -60,14 +68,14 @@ export default class Presentation extends React.Component {
 
         <Slide transition={["fade"]} bgColor="secondary">
           <Heading size={3} fit caps lineHeight={1} textColor="primary">
-            I'm Joe 🙋‍♂️
-          </Heading>
-          <Heading size={3} fit caps lineHeight={1} textColor="primary">
-            Digital Support Experience
+            I'm Joe
           </Heading>
           {/* <Heading size={3} fit caps lineHeight={1} textColor="primary">
-            Software Engineer - OVO Energy
+            Digital Support Experience
           </Heading> */}
+          <Heading size={3} fit caps lineHeight={1} textColor="primary">
+            Software Engineer - OVO Energy
+          </Heading>
           <Notes>
             <p>talk will focus on two things...</p>
           </Notes>
@@ -136,17 +144,30 @@ export default class Presentation extends React.Component {
           </Notes>
         </Slide>
 
+        <Slide transition={["fade"]} bgColor="tertiary" align="center center">
+          <Heading size={3} textColor="primary" caps lineHeight={1}>
+            Atoms
+          </Heading>
+          <Image
+            src={images.atomDiagram.replace("/", "")}
+            margin="40px auto 0"
+          />
+          <Notes>
+            <ul>
+              <li>here's how it looks in an abstract way</li>
+            </ul>
+          </Notes>
+        </Slide>
+
         <Slide transition={["fade"]} bgColor="quaternary" align="center center">
           <Heading size={3} textColor="primary" caps lineHeight={1}>
             Atoms
           </Heading>
-          <Appear>
-            <Image
-              src={images.atom.replace("/", "")}
-              margin="40px auto 0"
-              height="200px"
-            />
-          </Appear>
+          <Image
+            src={images.atom.replace("/", "")}
+            margin="40px auto 0"
+            height="200px"
+          />
           <Notes>
             <ul>
               <li>low level element</li>
@@ -157,17 +178,29 @@ export default class Presentation extends React.Component {
           </Notes>
         </Slide>
 
+        <Slide transition={["fade"]} bgColor="tertiary" align="center center">
+          <Heading size={3} textColor="primary" caps lineHeight={1}>
+            Molecules
+          </Heading>
+          <Image
+            src={images.moleculeDiagram.replace("/", "")}
+            margin="40px auto 0"
+          />
+          <Notes>
+            <ul>
+              <li>here's how it looks in an abstract way</li>
+            </ul>
+          </Notes>
+        </Slide>
+
         <Slide transition={["fade"]} bgColor="secondary" align="center center">
           <Heading size={3} textColor="tertiary" caps lineHeight={1}>
             Molecules
           </Heading>
-          <Appear>
             <Image
               src={images.molecule.replace("/", "")}
               margin="40px auto 0"
-              height="200px"
             />
-          </Appear>
           <Notes>
             <ul>
               <li>multiple atoms</li>
@@ -177,17 +210,27 @@ export default class Presentation extends React.Component {
           </Notes>
         </Slide>
 
+        <Slide transition={["fade"]} bgColor="tertiary" align="center center">
+          <Heading size={3} textColor="primary" caps lineHeight={1}>
+            Organisms
+          </Heading>
+          <Image
+            src={images.organismDiagram.replace("/", "")}
+            margin="40px auto 0"
+            height="800px"
+            width="auto"
+          />
+        </Slide>
+
+
         <Slide transition={["fade"]} bgColor="primary" align="center center">
           <Heading size={3} textColor="tertiary" caps lineHeight={1}>
             Organisms
           </Heading>
-          <Appear>
             <Image
               src={images.organism.replace("/", "")}
               margin="40px auto 0"
-              height="600px"
             />
-          </Appear>
           <Notes>
             <ul>
               <li>multiple molecules</li>
@@ -224,42 +267,6 @@ export default class Presentation extends React.Component {
           </Notes>
         </Slide>
 
-        <Slide transition={["zoom"]} bgColor="primary" align="center center">
-          <Heading size={3} textColor="tertiary" caps fit lineHeight={1}>
-            What does this solve?
-          </Heading>
-          <Appear>
-            <Text textColor="quaternary">
-              Defined and shared lower components means less time rewriting the
-              same components
-            </Text>
-          </Appear>
-          <Appear>
-            <Text textColor="secondary">Shared interfaces for components</Text>
-          </Appear>
-          <Appear>
-            <Text textColor="quaternary">
-              Shared styling keeps us consistent
-            </Text>
-          </Appear>
-          <Appear>
-            <Text textColor="secondary">
-              Coupled with theming opens up to sharing across brands
-            </Text>
-          </Appear>
-          <Appear>
-            <Text textColor="quaternary">
-              Also opens up theme changes for events
-            </Text>
-          </Appear>
-          <Appear>
-            <Text textColor="secondary">
-              Better mobile web experience as we're writing for app too (coming
-              up)
-            </Text>
-          </Appear>
-        </Slide>
-
         <Slide transition={["fade"]} bgColor="secondary">
           <Heading size={3} fit caps lineHeight={1} textColor="primary">
             Show the code!
@@ -272,18 +279,11 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
 
-        <Slide transition={["zoom"]} bgColor="primary">
+        <Slide transition={["appear"]} bgColor="primary">
           <Layout>
-            <Appear>
-              <Fill>
-                <Heading size={1}>⚛︎</Heading>
-              </Fill>
-            </Appear>
-            <Appear>
-              <Fill>
-                <Heading size={1}>💅</Heading>
-              </Fill>
-            </Appear>
+          <Fill>
+            <Heading size={1}>💅</Heading>
+          </Fill>
           </Layout>
           <Appear>
             <div>
@@ -369,12 +369,39 @@ export default class Presentation extends React.Component {
           </Notes>
         </Slide>
 
+        <Slide transition={["zoom"]} bgColor="primary" align="center center">
+          <Heading size={3} textColor="tertiary" caps fit lineHeight={1}>
+            What does this solve?
+          </Heading>
+          <Appear>
+            <Text textColor="quaternary">
+              Defined and shared lower components means less time rewriting the
+              same components
+            </Text>
+          </Appear>
+          <Appear>
+            <Text textColor="secondary">Shared interfaces for components</Text>
+          </Appear>
+          <Appear>
+            <Text textColor="quaternary">
+              Shared styling keeps us consistent
+            </Text>
+          </Appear>
+          <Appear>
+            <Text textColor="secondary">
+              Coupled with theming opens up to sharing across brands
+            </Text>
+          </Appear>
+          <Appear>
+            <Text textColor="quaternary">
+              Also opens up theme changes for events
+            </Text>
+          </Appear>
+        </Slide>
+
         <Slide transition={["fade"]} bgColor="quaternary" align="center center">
           <Heading size={6} textColor="primary" caps fit>
             molecular bonds
-          </Heading>
-          <Heading size={6} textColor="secondary" caps fit>
-            holding molecules together
           </Heading>
           <Notes>
             <ul>
@@ -385,9 +412,16 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide transition={["zoom"]} bgColor="primary">
-          <CodePane
+          {/* <CodePane
             lang="jsx"
             source={`export const VerticalConatiner = styled.div\`\n\tdisplay: flex;\n\tflex-direction: column;\n\`;\n`}
+            margin="20px 0"
+            textSize="24px"
+          /> */}
+          {/* For native */}
+          <CodePane
+            lang="jsx"
+            source={`export const VerticalConatiner = styled.View\`\n\tflex-direction: column;\n\`;\n`}
             margin="20px 0"
             textSize="24px"
           />
@@ -406,6 +440,16 @@ export default class Presentation extends React.Component {
               <li>but why abstract the structure?</li>
             </ul>
           </Notes>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="tertiary" align="center center">
+          <Heading size={3} textColor="primary" caps lineHeight={1}>
+            Song Listing
+          </Heading>
+          <Image
+            src={images.moleculeDiagramLayout.replace("/", "")}
+            margin="40px auto 0"
+          />
         </Slide>
 
         <Slide transition={["fade"]} bgColor="tertiary">
@@ -438,6 +482,12 @@ export default class Presentation extends React.Component {
           </Heading>
         </Slide>
 
+        <Slide transition={["zoom"]} bgColor="primary" align="center center">
+          <Heading size={6} textColor="quaternary" caps fit>
+            web life...
+          </Heading>
+        </Slide>
+
         <Slide transition={["fade"]} bgColor="secondary" align="center center">
           <Image
             src={images.webpack.replace("/", "")}
@@ -451,7 +501,7 @@ export default class Presentation extends React.Component {
           </Notes>
         </Slide>
 
-        <Slide transition={["fade"]} bgColor="primary" align="center center">
+        {/* <Slide transition={["fade"]} bgColor="primary" align="center center">
           <Heading size={6} textColor="secondary" caps fit>
             using webpack
           </Heading>
@@ -470,7 +520,7 @@ export default class Presentation extends React.Component {
               <li>helps us choose file types</li>
             </ul>
           </Notes>
-        </Slide>
+        </Slide> */}
 
         <Slide transition={["zoom"]} bgColor="quaternary" align="center center">
           <Heading size={6} textColor="primary" fit>
@@ -486,7 +536,7 @@ export default class Presentation extends React.Component {
 
         <Slide transition={["zoom"]} bgColor="primary" align="center center">
           <Heading size={6} textColor="quaternary" caps fit>
-            what about react native?
+            and react native?
           </Heading>
         </Slide>
 
@@ -503,7 +553,7 @@ export default class Presentation extends React.Component {
           </Notes>
         </Slide>
 
-        <Slide transition={["fade"]} bgColor="primary" align="center center">
+        {/* <Slide transition={["fade"]} bgColor="primary" align="center center">
           <Heading size={6} textColor="secondary" caps fit>
             Metro Bundler
           </Heading>
@@ -519,7 +569,7 @@ export default class Presentation extends React.Component {
               <li>helps us choose file types for mobile</li>
             </ul>
           </Notes>
-        </Slide>
+        </Slide> */}
 
         <Slide transition={["zoom"]} bgColor="quaternary" align="center center">
           <Heading size={6} textColor="primary" fit>
@@ -567,6 +617,42 @@ export default class Presentation extends React.Component {
           />
         </Slide>
 
+        <Slide transition={["fade"]} bgColor="tertiary" align="center center">
+          <Image
+            src={images.organismDiagram.replace("/", "")}
+            margin="40px auto 0"
+            height="800px"
+            width="auto"
+          />
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="tertiary" align="center center">
+          <Image
+            src={images.organismAndroidDiagram.replace("/", "")}
+            margin="40px auto 0"
+            height="800px"
+            width="auto"
+          />
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="tertiary" align="center center">
+          <Image
+            src={images.organismIosDiagram.replace("/", "")}
+            margin="40px auto 0"
+            height="800px"
+            width="auto"
+          />
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="tertiary" align="center center">
+          <Image
+            src={images.organismIosLayoutDiagram.replace("/", "")}
+            margin="40px auto 0"
+            height="800px"
+            width="auto"
+          />
+        </Slide>
+
         <Slide transition={["zoom"]} bgColor="secondary">
           <Heading size={1} fit caps textColor="primary">
             back to styled-components
@@ -597,18 +683,6 @@ export default class Presentation extends React.Component {
           />
         </Slide>
 
-        <Slide transition={["zoom"]} bgColor="primary">
-          <Heading size={2} textColor="quaternary">
-            Vertical Container
-          </Heading>
-          <CodePane
-            lang="jsx"
-            source={`import styled from 'styled-components';\n\nexport const VerticalConatiner = styled.div\`\n\tdisplay: flex;\n\tflex-direction: column;\n\`;\n`}
-            margin="20px 0"
-            textSize="24px"
-          />
-        </Slide>
-
         <Slide transition={["zoom"]} bgColor="quaternary">
           <Heading size={2} textColor="primary">
             Vertical Container Native
@@ -616,6 +690,18 @@ export default class Presentation extends React.Component {
           <CodePane
             lang="jsx"
             source={`import styled from 'styled-components/native';\n\nexport const VerticalConatiner = styled.View\`\n\tflex-direction: column;\n\`;\n`}
+            margin="20px 0"
+            textSize="24px"
+          />
+        </Slide>
+
+        <Slide transition={["zoom"]} bgColor="primary">
+          <Heading size={2} textColor="quaternary">
+            Vertical Container
+          </Heading>
+          <CodePane
+            lang="jsx"
+            source={`import styled from 'styled-components';\n\nexport const VerticalConatiner = styled.div\`\n\tdisplay: flex;\n\tflex-direction: column;\n\`;\n`}
             margin="20px 0"
             textSize="24px"
           />
@@ -676,6 +762,14 @@ export default class Presentation extends React.Component {
           </Notes>
         </Slide>
 
+        <Slide transition={["fade"]} bgColor="quaternary" align="center center">
+          <Image
+            src={images.somewhere.replace("/", "")}
+            margin="40px auto 0"
+            height="400px"
+          />
+        </Slide>
+
         <Slide transition={["zoom"]} bgColor="secondary">
           <Heading size={1} caps lineHeight={1} textColor="primary">
             code!
@@ -717,26 +811,22 @@ export default class Presentation extends React.Component {
           </Notes>
         </Slide>
 
-        <Slide transition={["fade"]} bgColor="quaternary" align="center center">
-          <Image
-            src={images.somewhere.replace("/", "")}
-            margin="40px auto 0"
-            height="400px"
-          />
-        </Slide>
-
         <Slide transition={["zoom"]} bgColor="primary">
           <Heading size={1} caps lineHeight={1} textColor="tertiary">
             What about workflow?
           </Heading>
-          <Text textColor="quaternary">visual regression</Text>
-          <Text textColor="secondary">snapshot testing</Text>
-          <Text textColor="quaternary">storybook</Text>
-          <Text textColor="secondary">module versioning</Text>
-          <Text textColor="quaternary">e2e testing</Text>
-          <Text textColor="secondary">abstract when you need to abstract</Text>
-          <Text textColor="quaternary">never restrict yourself</Text>
-          <Text textColor="secondary">components, many many components</Text>
+          <Appear>
+            <div>
+              <Text textColor="quaternary">visual regression</Text>
+              <Text textColor="secondary">snapshot testing</Text>
+              <Text textColor="quaternary">storybook</Text>
+              <Text textColor="secondary">module versioning</Text>
+              <Text textColor="quaternary">e2e testing</Text>
+              <Text textColor="secondary">abstract when you need to abstract</Text>
+              <Text textColor="quaternary">never restrict yourself</Text>
+              <Text textColor="secondary">components, many many components</Text>
+            </div>
+          </Appear>
         </Slide>
 
         <Slide transition={["fade"]} bgColor="secondary">
@@ -751,12 +841,12 @@ export default class Presentation extends React.Component {
           </Heading>
           <Appear>
             <Heading size={3} caps lineHeight={1} textColor="secondary">
-              you shouldn't share everything
+              Doesn't mean you should share everything
             </Heading>
           </Appear>
         </Slide>
 
-        <Slide transition={["zoom"]} bgColor="quaternary">
+        {/* <Slide transition={["zoom"]} bgColor="quaternary">
           <Appear>
             <Heading size={2} textColor="primary" fit caps margin="0 0 20px">
               Styled Components = Share styling across platforms
@@ -798,7 +888,7 @@ export default class Presentation extends React.Component {
             </Heading>
           </Appear>
           <Notes>look at the slide numb nuts</Notes>
-        </Slide>
+        </Slide> */}
 
         <Slide transition={["fade"]} bgColor="secondary" align="center center">
           <Image
@@ -806,9 +896,9 @@ export default class Presentation extends React.Component {
             margin="40px auto 40px"
             height="300px"
           />
-          <Heading size={2} caps textColor="primary">
+          {/* <Heading size={2} caps textColor="primary">
             questions?
-          </Heading>
+          </Heading> */}
           <Notes>Any questions?</Notes>
         </Slide>
 
