@@ -151,6 +151,7 @@ export default class Presentation extends React.Component {
           <Image
             src={images.atomDiagram.replace("/", "")}
             margin="40px auto 0"
+            height="300px"
           />
           <Notes>
             <ul>
@@ -166,7 +167,7 @@ export default class Presentation extends React.Component {
           <Image
             src={images.atom.replace("/", "")}
             margin="40px auto 0"
-            height="200px"
+            // height="200px"
           />
           <Notes>
             <ul>
@@ -185,6 +186,7 @@ export default class Presentation extends React.Component {
           <Image
             src={images.moleculeDiagram.replace("/", "")}
             margin="40px auto 0"
+            height="400px"
           />
           <Notes>
             <ul>
@@ -217,7 +219,7 @@ export default class Presentation extends React.Component {
           <Image
             src={images.organismDiagram.replace("/", "")}
             margin="40px auto 0"
-            height="800px"
+            height="580px"
             width="auto"
           />
         </Slide>
@@ -609,19 +611,13 @@ export default class Presentation extends React.Component {
           </Notes>
         </Slide>
 
-        <Slide transition={["fade"]} bgColor="secondary" align="center center">
-          <Image
-            src={images.and.replace("/", "")}
-            margin="40px auto 0"
-            height="500px"
-          />
-        </Slide>
+        {/*
 
         <Slide transition={["fade"]} bgColor="tertiary" align="center center">
           <Image
             src={images.organismDiagram.replace("/", "")}
             margin="40px auto 0"
-            height="800px"
+            height="580px"
             width="auto"
           />
         </Slide>
@@ -630,7 +626,7 @@ export default class Presentation extends React.Component {
           <Image
             src={images.organismAndroidDiagram.replace("/", "")}
             margin="40px auto 0"
-            height="800px"
+            height="580px"
             width="auto"
           />
         </Slide>
@@ -639,7 +635,7 @@ export default class Presentation extends React.Component {
           <Image
             src={images.organismIosDiagram.replace("/", "")}
             margin="40px auto 0"
-            height="800px"
+            height="580px"
             width="auto"
           />
         </Slide>
@@ -650,6 +646,77 @@ export default class Presentation extends React.Component {
             margin="40px auto 0"
             height="800px"
             width="auto"
+          />
+        </Slide> */}
+
+<Slide transition={["fade"]} bgColor="secondary" align="center center">
+          <Image
+            src={images.and.replace("/", "")}
+            margin="40px auto 0"
+            height="500px"
+          />
+        </Slide>
+
+        <Slide transition={["zoom"]} bgColor="quaternary">
+          <Heading size={2} textColor="primary">
+            Our platforms load the appropriate file extension at each level
+          </Heading>
+          <Notes>
+            <ul>
+              <li>
+                each layer webpack or metro bundler searches and uses the right
+                file
+              </li>
+              <li>mobile order of importance</li>
+            </ul>
+          </Notes>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="quaternary">
+          <Heading size={6} textColor="primary">
+            index.js
+          </Heading>
+          <CodePane
+            lang="jsx"
+            source={`import styled from 'styled-components';\n\nexport const VerticalConatiner = styled.div\`\n\tdisplay: flex;\n\tflex-direction: column;\n\`;\n`}
+            margin="20px 0"
+            textSize="24px"
+          />
+          <Heading size={6} textColor="primary">
+            index.native.js
+          </Heading>
+          <CodePane
+            lang="jsx"
+            source={`import styled from 'styled-components/native';\n\nexport const VerticalConatiner = styled.View\`\n\tflex-direction: column;\n\`;\n`}
+            margin="20px 0"
+            textSize="24px"
+          />
+        </Slide>
+
+        <Slide transition={["zoom"]} bgColor="secondary">
+          <Heading size={2} fit textColor="primary">
+            fancyComponent.js
+          </Heading>
+          <CodePane
+            lang="jsx"
+            source={`import React from 'react';\nimport styled from 'styled-components';\nimport { VerticalContainer } from 'component-library/atoms';\nimport { Text } from 'component-library/atoms';\n\nconst Container = styled(VerticalContainer)\`\n  background-color: #BADA55;\n\`;\n\nexport default () => (\n  <Container>\n    <Text>Fancy Component</Text>\n  </Container>\n);\n`}
+            margin="20px 0"
+            textSize="24px"
+          />
+          <Notes>
+            <ul>
+              <li>importing from atoms regardless of platform</li>
+              <li>extending the styles regardless of platform</li>
+              <li>this cane be used for any platform now</li>
+            </ul>
+          </Notes>
+        </Slide>
+
+        <Slide transition={["fade"]} bgColor="quaternary" align="center center">
+          <Image
+            src={images.somewhere.replace("/", "")}
+            margin="40px auto 0"
+            height="400px"
           />
         </Slide>
 
@@ -709,7 +776,7 @@ export default class Presentation extends React.Component {
 
         <Slide transition={["fade"]} bgColor="quaternary">
           <Heading size={6} textColor="primary">
-            index.js
+            Vertical Container
           </Heading>
           <CodePane
             lang="jsx"
@@ -718,7 +785,7 @@ export default class Presentation extends React.Component {
             textSize="24px"
           />
           <Heading size={6} textColor="primary">
-            index.native.js
+            Native Vertical Container
           </Heading>
           <CodePane
             lang="jsx"
@@ -745,29 +812,6 @@ export default class Presentation extends React.Component {
               <li>this cane be used for any platform now</li>
             </ul>
           </Notes>
-        </Slide>
-
-        <Slide transition={["zoom"]} bgColor="quaternary">
-          <Heading size={2} textColor="primary">
-            Our platforms load the appropriate file extension at each level
-          </Heading>
-          <Notes>
-            <ul>
-              <li>
-                each layer webpack or metro bundler searches and uses the right
-                file
-              </li>
-              <li>mobile order of importance</li>
-            </ul>
-          </Notes>
-        </Slide>
-
-        <Slide transition={["fade"]} bgColor="quaternary" align="center center">
-          <Image
-            src={images.somewhere.replace("/", "")}
-            margin="40px auto 0"
-            height="400px"
-          />
         </Slide>
 
         <Slide transition={["zoom"]} bgColor="secondary">
@@ -906,7 +950,9 @@ export default class Presentation extends React.Component {
           <Heading size={6} caps fit textColor="primary">
             github.com/joepurnell1/sharing-components-talk
           </Heading>
-          <Notes>find repo</Notes>
+          <Heading size={6} margin="60px 0"caps textColor="primary">
+            @joepurnell8
+          </Heading>
         </Slide>
       </Deck>
     );

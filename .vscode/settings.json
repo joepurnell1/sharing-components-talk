@@ -1,11 +1,16 @@
 {
   "files.exclude": {
     // "**/*.native.js": true,
-    // "**/bonds/": true,
     // "**/*.ios.js": true,
     // "**/*.android.js": true,
     // "reactnative/": true,
-    // "presentation/": true
+
+    "**/bonds/": true,
+    "web/": true,
+    "presentation/": true,
+    ".gitignore": true,
+    "README.md": true,
+    ".vscode": true
   },
   "workbench.colorCustomizations": {
     "activityBar.background": "#f8f166",
