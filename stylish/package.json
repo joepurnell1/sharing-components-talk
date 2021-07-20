@@ -22,13 +22,13 @@
     "@babel/preset-react": "^7.0.0",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
-    "react-native": "0.61.1",
+    "react-native": "0.62.3",
     "styled-components": "^4.4.0"
   },
   "peerDependencies": {
     "react": "^16.6.1",
     "react-dom": "^16.6.3",
-    "react-native": "0.61.1",
+    "react-native": "0.62.3",
     "styled-components": "^4.4.0"
   }
 }
